@@ -1,0 +1,47 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    // Connection test collection
+    match /test/{testId} {
+      allow read: if isValidId(testId);
+      allow write: if false;
+    }
+
+    // Documents collection
+    match /documents/{documentId} {
+      allow read: if isValidId(documentId) && (
+        resource == null ||
+        resource.data.accessLevel == 'public' ||
+        isSignedIn()
+      );
+      allow create, update: if isSignedIn() && isValidId(documentId);
+      allow delete: if isSignedIn() && isValidId(documentId);
+    }
+
+    // Audit logs
+    match /auditLogs/{logId} {
+      allow read: if isSignedIn() && isValidId(logId);
+      allow create: if isValidId(logId);
+      allow update, delete: if false; // immutable audit log
+    }
+
+    // Notifications
+    match /notifications/{notificationId} {
+      allow read: if isValidId(notificationId);
+      allow write: if isSignedIn() && isValidId(notificationId);
+    }
+  }
+}

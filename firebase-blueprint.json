@@ -1,0 +1,183 @@
+{
+  "entities": {
+    "Document": {
+      "title": "Document",
+      "description": "Document entity for storing archived records, circulars, directives, reports and multimedia of Ca Mau Propaganda Department",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique document identifier"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title or summary name of the document"
+        },
+        "codeNumber": {
+          "type": "string",
+          "description": "Official code number, e.g., 88-KH/BTGTU"
+        },
+        "documentType": {
+          "type": "string",
+          "description": "Type of document, e.g., Kế hoạch, Quyết định, Báo cáo"
+        },
+        "category": {
+          "type": "string",
+          "description": "Subject domain, e.g., Lý luận chính trị, Lịch sử Đảng"
+        },
+        "issuingAuthority": {
+          "type": "string",
+          "description": "Issuing agency or department"
+        },
+        "issueDate": {
+          "type": "string",
+          "description": "Official issue date YYYY-MM-DD"
+        },
+        "accessLevel": {
+          "type": "string",
+          "enum": ["public", "internal", "restricted", "confidential"],
+          "description": "Security access level"
+        },
+        "summary": {
+          "type": "string",
+          "description": "Abstract/summary description of contents"
+        },
+        "keywords": {
+          "type": "string",
+          "description": "Comma separated keywords or tags"
+        },
+        "fileFormat": {
+          "type": "string",
+          "description": "File format, e.g., PDF, DOCX, XLSX, PPTX, JPG, MP4"
+        },
+        "fileSize": {
+          "type": "string",
+          "description": "Formatted file size string"
+        },
+        "fileUrl": {
+          "type": "string",
+          "description": "Simulated or actual storage URL"
+        },
+        "ocrContent": {
+          "type": "string",
+          "description": "Full extracted OCR text content for deep full-text indexing"
+        },
+        "signatory": {
+          "type": "string",
+          "description": "Name and title of the person who signed"
+        },
+        "updatedBy": {
+          "type": "string",
+          "description": "Name or email of editor who updated the document"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last update"
+        },
+        "isFeatured": {
+          "type": "boolean",
+          "description": "Flag for featured or pinned document"
+        },
+        "downloadCount": {
+          "type": "number",
+          "description": "Count of document downloads"
+        },
+        "viewCount": {
+          "type": "number",
+          "description": "Count of document views"
+        }
+      },
+      "required": ["id", "title", "codeNumber", "documentType", "category", "issuingAuthority", "issueDate", "accessLevel"]
+    },
+    "AuditLog": {
+      "title": "AuditLog",
+      "description": "System activity logs tracking who uploaded, edited, downloaded, or deleted documents",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Log record ID"
+        },
+        "action": {
+          "type": "string",
+          "description": "Action performed, e.g., Tải lên, Chỉnh sửa, Tải xuống, Xem, Xóa"
+        },
+        "documentId": {
+          "type": "string",
+          "description": "Target document ID if applicable"
+        },
+        "documentTitle": {
+          "type": "string",
+          "description": "Target document title"
+        },
+        "userEmail": {
+          "type": "string",
+          "description": "Email of user who performed the action"
+        },
+        "userName": {
+          "type": "string",
+          "description": "Full display name of user"
+        },
+        "userRole": {
+          "type": "string",
+          "description": "Role of user at time of action"
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "ISO timestamp of event"
+        },
+        "details": {
+          "type": "string",
+          "description": "Additional context or notes"
+        }
+      },
+      "required": ["id", "action", "timestamp", "userEmail"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "Official announcements and push alerts for cadre and party members",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Notification ID"
+        },
+        "title": {
+          "type": "string",
+          "description": "Notification title"
+        },
+        "content": {
+          "type": "string",
+          "description": "Full message content"
+        },
+        "date": {
+          "type": "string",
+          "description": "Publication date"
+        },
+        "type": {
+          "type": "string",
+          "description": "Type of announcement"
+        },
+        "isRead": {
+          "type": "boolean",
+          "description": "Read status"
+        }
+      },
+      "required": ["id", "title", "content", "date"]
+    }
+  },
+  "firestore": {
+    "/documents/{documentId}": {
+      "schema": "Document",
+      "description": "Archived digital documents, resolutions, reports and assets"
+    },
+    "/auditLogs/{logId}": {
+      "schema": "AuditLog",
+      "description": "System operational and access audit records"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "Notification",
+      "description": "Broadcast notifications and directives alerts"
+    }
+  }
+}

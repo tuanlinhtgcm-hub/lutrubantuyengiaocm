@@ -1,0 +1,6 @@
+{
+  "name": "Kho Lưu Trữ Số – Ban Tuyên Giáo Tỉnh Ủy Cà Mau",
+  "description": "Hệ thống quản trị, số hóa và tra cứu tài liệu tuyên giáo, lịch sử Đảng bộ, văn bản chỉ đạo của Ban Tuyên giáo Tỉnh ủy Cà Mau.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

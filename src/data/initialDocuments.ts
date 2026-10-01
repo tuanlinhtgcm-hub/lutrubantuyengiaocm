@@ -1,0 +1,467 @@
+import { DocumentItem } from '../types';
+
+export const INITIAL_DOCUMENTS: DocumentItem[] = [
+  {
+    id: 'doc-001',
+    title: 'Kế hoạch công tác Tuyên giáo năm 2026 của Ban Tuyên giáo Tỉnh ủy Cà Mau',
+    codeNumber: '88-KH/BTGTU',
+    documentType: 'Kế hoạch',
+    category: 'Lý luận chính trị',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-01-15',
+    accessLevel: 'public',
+    summary: 'Kế hoạch trọng tâm chỉ đạo và triển khai toàn diện công tác tuyên giáo trên địa bàn tỉnh Cà Mau năm 2026, tập trung đổi mới phương thức tuyên truyền, tăng cường ứng dụng công nghệ thông tin và chuyển đổi số.',
+    keywords: ['Kế hoạch 2026', 'Tuyên giáo Cà Mau', 'Chỉ đạo định hướng', 'Đổi mới phương thức'],
+    fileFormat: 'PDF',
+    fileSize: '2.4 MB',
+    signatory: 'Hồ Trung Việt - Trưởng Ban Tuyên giáo Tỉnh ủy',
+    updatedBy: 'Lê Văn An - Cán bộ Tổng hợp',
+    updatedAt: '2026-01-16T08:30:00Z',
+    isFeatured: true,
+    downloadCount: 348,
+    viewCount: 1240,
+    ocrContent: 'BAN TUYÊN GIÁO TỈNH ỦY CÀ MAU - Số: 88-KH/BTGTU. KẾ HOẠCH CÔNG TÁC TUYÊN GIÁO NĂM 2026. Mục tiêu chung: Nâng cao bản lĩnh chính trị, giữ vững trận địa tư tưởng của Đảng bộ tỉnh; đẩy mạnh chuyển đổi số trong tuyên truyền, định hướng dư luận xã hội kịp thời, chính xác.',
+    history: [
+      { timestamp: '2026-01-15 14:00', action: 'Ban hành văn bản', userName: 'Văn phòng Ban Tuyên giáo' },
+      { timestamp: '2026-01-16 08:30', action: 'Số hóa & cập nhật kho lưu trữ', userName: 'Lê Văn An' }
+    ]
+  },
+  {
+    id: 'doc-002',
+    title: 'Đề án Chuyển đổi số trong hoạt động các cơ quan Đảng tỉnh Cà Mau giai đoạn 2025 - 2030',
+    codeNumber: '04-ĐA/TU',
+    documentType: 'Đề án',
+    category: 'Chuyển đổi số',
+    issuingAuthority: 'Tỉnh ủy Cà Mau',
+    issueDate: '2025-11-28',
+    accessLevel: 'internal',
+    summary: 'Đề án tổng thể xây dựng hạ tầng dữ liệu số, kho lưu trữ điện tử, phòng họp không giấy và ứng dụng trí tuệ nhân tạo hỗ trợ tham mưu, tổng hợp trong toàn hệ thống cơ quan Đảng tỉnh Cà Mau.',
+    keywords: ['Chuyển đổi số', 'Đề án 04', 'Dữ liệu số', 'Cơ quan Đảng Cà Mau'],
+    fileFormat: 'PDF',
+    fileSize: '4.8 MB',
+    signatory: 'Nguyễn Tiến Hải - Bí thư Tỉnh ủy',
+    updatedBy: 'Trần Minh Trí - Cán bộ CNTT',
+    updatedAt: '2025-12-01T10:15:00Z',
+    isFeatured: true,
+    downloadCount: 512,
+    viewCount: 1890,
+    ocrContent: 'TỈNH ỦY CÀ MAU - SỐ: 04-ĐA/TU. ĐỀ ÁN CHUYỂN ĐỔI SỐ TRONG HOẠT ĐỘNG CÁC CƠ QUAN ĐẢNG TỈNH CÀ MAU. Quan điểm chỉ đạo: Lấy người dùng là cán bộ, đảng viên làm trung tâm; bảo đảm an toàn, an ninh thông tin tuyệt đối.',
+    history: [
+      { timestamp: '2025-11-28 16:30', action: 'Phê duyệt đề án', userName: 'Thường trực Tỉnh ủy' },
+      { timestamp: '2025-12-01 10:15', action: 'Tải lên kho nội bộ', userName: 'Trần Minh Trí' }
+    ]
+  },
+  {
+    id: 'doc-003',
+    title: 'Chỉ thị về đẩy mạnh học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh',
+    codeNumber: '19-CT/TU',
+    documentType: 'Chỉ thị',
+    category: 'Thực thành tư tưởng Hồ Chí Minh',
+    issuingAuthority: 'Ban Thường vụ Tỉnh ủy',
+    issueDate: '2025-05-19',
+    accessLevel: 'public',
+    summary: 'Chỉ thị phát động phong trào thi đua sâu rộng trong cán bộ, đảng viên và nhân dân tỉnh Cà Mau về tu dưỡng, rèn luyện theo tấm gương Bác Hồ, xây dựng chuẩn mực đạo đức cách mạng thời kỳ mới.',
+    keywords: ['Tư tưởng Hồ Chí Minh', 'Học tập làm theo Bác', 'Chỉ thị 19', 'Đạo đức cách mạng'],
+    fileFormat: 'DOCX',
+    fileSize: '850 KB',
+    signatory: 'Huỳnh Quốc Việt - Phó Bí thư Tỉnh ủy',
+    updatedBy: 'Nguyễn Thị Mai - Phòng Lý luận chính trị',
+    updatedAt: '2025-05-20T09:00:00Z',
+    isFeatured: true,
+    downloadCount: 420,
+    viewCount: 1530,
+    ocrContent: 'BAN THƯỜNG VỤ TỈNH ỦY CÀ MAU - CHỈ THỊ SỐ 19-CT/TU. Về đẩy mạnh học tập và làm theo tư tưởng, đạo đức, phong cách Hồ Chí Minh. Yêu cầu các cấp ủy Đảng cụ thể hóa thành kế hoạch hành động từng năm.',
+    history: [
+      { timestamp: '2025-05-19 11:00', action: 'Ký ban hành', userName: 'Ban Thường vụ Tỉnh ủy' },
+      { timestamp: '2025-05-20 09:00', action: 'Số hóa phát hành công khai', userName: 'Nguyễn Thị Mai' }
+    ]
+  },
+  {
+    id: 'doc-004',
+    title: 'Lịch sử Đảng bộ tỉnh Cà Mau (Tập III - Giai đoạn 1975 - 2020)',
+    codeNumber: 'LS-ĐB-T3',
+    documentType: 'Đề cương',
+    category: 'Lịch sử Đảng',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2024-10-10',
+    accessLevel: 'public',
+    summary: 'Công trình lịch sử Đảng bộ tỉnh tổng kết chặng đường 45 năm xây dựng, bảo vệ và phát triển quê hương Cà Mau từ sau ngày giải phóng miền Nam thống nhất đất nước đến năm 2020.',
+    keywords: ['Lịch sử Đảng bộ', 'Cà Mau 1975-2020', 'Địa chí cách mạng', 'Tư liệu lịch sử'],
+    fileFormat: 'PDF',
+    fileSize: '18.5 MB',
+    signatory: 'Hội đồng Biên soạn Lịch sử Đảng bộ tỉnh',
+    updatedBy: 'Lê Văn An - Cán bộ Tổng hợp',
+    updatedAt: '2024-10-15T14:20:00Z',
+    isFeatured: true,
+    downloadCount: 780,
+    viewCount: 2950,
+    ocrContent: 'LỊCH SỬ ĐẢNG BỘ TỈNH CÀ MAU - TẬP III (1975 - 2020). Lời giới thiệu của Tỉnh ủy Cà Mau. Khắc họa sâu sắc tinh thần kiên cường của nhân dân Đất Mũi dưới sự lãnh đạo của Đảng bộ tỉnh qua các thời kỳ đổi mới.',
+    history: [
+      { timestamp: '2024-10-10 10:00', action: 'Xuất bản và nghiệm thu', userName: 'Hội đồng Khoa học' },
+      { timestamp: '2024-10-15 14:20', action: 'Số hóa toàn tập', userName: 'Lê Văn An' }
+    ]
+  },
+  {
+    id: 'doc-005',
+    title: 'Hướng dẫn công tác tuyên truyền biển, đảo và bảo vệ chủ quyền biên giới Tây Nam năm 2026',
+    codeNumber: '24-HD/BTGTU',
+    documentType: 'Hướng dẫn',
+    category: 'Tuyên truyền biển đảo',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-02-20',
+    accessLevel: 'public',
+    summary: 'Tài liệu hướng dẫn các cấp ủy, tổ chức cơ sở đảng đẩy mạnh công tác tuyên truyền về tiềm năng kinh tế biển, chủ quyền các cụm đảo Hòn Khoai, Hòn Chuối, Hòn Đá Bạc và phòng chống khai thác hải sản bất hợp pháp (IUU).',
+    keywords: ['Tuyên truyền biển đảo', 'Biên giới Tây Nam', 'Chủ quyền Hòn Khoai', 'Chống khai thác IUU'],
+    fileFormat: 'PDF',
+    fileSize: '1.6 MB',
+    signatory: 'Phạm Việt Triều - Phó Trưởng Ban Tuyên giáo Tỉnh ủy',
+    updatedBy: 'Nguyễn Thị Mai - Phòng Tuyên truyền',
+    updatedAt: '2026-02-21T08:00:00Z',
+    isFeatured: false,
+    downloadCount: 290,
+    viewCount: 890,
+    ocrContent: 'HƯỚNG DẪN SỐ 24-HD/BTGTU. CÔNG TÁC TUYÊN TRUYỀN BIỂN ĐẢO NĂM 2026. Tăng cường vận động ngư dân chấp hành nghiêm luật thủy sản, kiên quyết chống khai thác IUU; khẳng định chủ quyền thiêng liêng vùng biển Tây Nam.',
+    history: [
+      { timestamp: '2026-02-20 09:30', action: 'Ban hành hướng dẫn', userName: 'Ban Tuyên giáo Tỉnh ủy' }
+    ]
+  },
+  {
+    id: 'doc-006',
+    title: 'Báo cáo tổng hợp tình hình tư tưởng và dư luận xã hội quý I/2026 trên địa bàn tỉnh Cà Mau',
+    codeNumber: '112-BC/BTGTU',
+    documentType: 'Báo cáo',
+    category: 'Dư luận xã hội',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-03-25',
+    accessLevel: 'restricted',
+    summary: 'Báo cáo phân tích chuyên sâu các luồng ý kiến nhân dân liên quan đến chính sách an sinh xã hội, giải phóng mặt bằng các dự án trọng điểm (cao tốc Cần Thơ - Cà Mau), tình hình sạt lở đê biển và đời sống ngư dân.',
+    keywords: ['Dư luận xã hội', 'Báo cáo Quý 1-2026', 'Tư tưởng cán bộ', 'Đời sống nhân dân Cà Mau'],
+    fileFormat: 'DOCX',
+    fileSize: '920 KB',
+    signatory: 'Nguyễn Văn Đen - Phó Trưởng Ban Tuyên giáo Tỉnh ủy',
+    updatedBy: 'Lê Văn An - Cán bộ Tổng hợp',
+    updatedAt: '2026-03-26T11:00:00Z',
+    isFeatured: false,
+    downloadCount: 145,
+    viewCount: 460,
+    ocrContent: 'BÁO CÁO SỐ 112-BC/BTGTU: TÌNH HÌNH TƯ TƯỞNG VÀ DƯ LUẬN XÃ HỘI QUÝ I NĂM 2026. Ghi nhận sự đồng thuận cao của cán bộ, nhân dân với các chỉ đạo điều hành kinh tế xã hội của Tỉnh ủy và UBND tỉnh.',
+    history: [
+      { timestamp: '2026-03-25 15:00', action: 'Hoàn thành báo cáo', userName: 'Phòng Dư luận xã hội' },
+      { timestamp: '2026-03-26 11:00', action: 'Lưu trữ tài liệu hạn chế', userName: 'Lê Văn An' }
+    ]
+  },
+  {
+    id: 'doc-007',
+    title: 'Kế hoạch tổ chức các hoạt động kỷ niệm 96 năm Ngày thành lập Đảng Cộng sản Việt Nam',
+    codeNumber: '95-KH/BTGTU',
+    documentType: 'Kế hoạch',
+    category: 'Tuyên truyền - báo chí - xuất bản',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-01-05',
+    accessLevel: 'public',
+    summary: 'Kế hoạch tổ chức đợt sinh hoạt chính trị sâu rộng, hội thảo khoa học, triển lãm tư liệu và các chương trình nghệ thuật chào mừng 96 năm vẻ vang của Đảng Cộng sản Việt Nam (03/02/1930 - 03/02/2026).',
+    keywords: ['Kỷ niệm 96 năm Ngày thành lập Đảng', 'Sinh hoạt chính trị', 'Tuyên truyền ngày lễ lớn'],
+    fileFormat: 'PDF',
+    fileSize: '1.9 MB',
+    signatory: 'Hồ Trung Việt - Trưởng Ban Tuyên giáo Tỉnh ủy',
+    updatedBy: 'Trần Minh Trí - Cán bộ CNTT',
+    updatedAt: '2026-01-06T15:00:00Z',
+    isFeatured: false,
+    downloadCount: 310,
+    viewCount: 1100,
+    ocrContent: 'KẾ HOẠCH SỐ 95-KH/BTGTU. Tổ chức đợt sinh hoạt chính trị chào mừng 96 năm Ngày thành lập Đảng Cộng sản Việt Nam. Giáo dục truyền thống yêu nước, khơi dậy khát vọng cống hiến trong thế hệ trẻ Đất Mũi.',
+    history: [
+      { timestamp: '2026-01-05 10:00', action: 'Ban hành', userName: 'Ban Tuyên giáo Tỉnh ủy' }
+    ]
+  },
+  {
+    id: 'doc-008',
+    title: 'Đề cương tuyên truyền kết quả thực hiện nhiệm vụ phát triển kinh tế - xã hội và xây dựng Đảng',
+    codeNumber: '09-ĐC/BTGTU',
+    documentType: 'Đề cương',
+    category: 'Báo cáo viên, tuyên truyền viên',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-03-12',
+    accessLevel: 'internal',
+    summary: 'Bộ tài liệu phục vụ hội nghị báo cáo viên tháng 3/2026, cung cấp số liệu tổng hợp về tăng trưởng GRDP, thu ngân sách, tiến độ các công trình năng lượng tái tạo và công tác phát triển đảng viên mới.',
+    keywords: ['Hội nghị báo cáo viên', 'Đề cương tuyên truyền', 'Kinh tế xã hội Cà Mau', 'Xây dựng Đảng'],
+    fileFormat: 'PPTX',
+    fileSize: '6.4 MB',
+    signatory: 'Phòng Báo cáo viên - Tuyên truyền',
+    updatedBy: 'Nguyễn Thị Mai - Báo cáo viên Tỉnh ủy',
+    updatedAt: '2026-03-13T09:40:00Z',
+    isFeatured: false,
+    downloadCount: 220,
+    viewCount: 710,
+    ocrContent: 'ĐỀ CƯƠNG BÁO CÁO VIÊN THÁNG 3/2026. Tình hình kinh tế xã hội tỉnh Cà Mau: Thu hút đầu tư năng lượng gió, phát triển nuôi trồng thủy sản công nghệ cao, đẩy mạnh cải cách hành chính cơ quan Đảng.',
+    history: [
+      { timestamp: '2026-03-12 14:00', action: 'Biên soạn đề cương', userName: 'Phòng Báo cáo viên' }
+    ]
+  },
+  {
+    id: 'doc-009',
+    title: 'Quy định về phát ngôn và cung cấp thông tin cho báo chí của các cấp ủy Đảng tỉnh Cà Mau',
+    codeNumber: '12-QĐ/TU',
+    documentType: 'Quy định',
+    category: 'Tuyên truyền - báo chí - xuất bản',
+    issuingAuthority: 'Ban Thường vụ Tỉnh ủy',
+    issueDate: '2025-08-14',
+    accessLevel: 'internal',
+    summary: 'Quy định chi tiết trách nhiệm, thẩm quyền của người phát ngôn các cơ quan Đảng trong việc cung cấp thông tin chính xác, kịp thời, chủ động đấu tranh phản bác các quan điểm sai trái, thù địch trên không gian mạng.',
+    keywords: ['Quy định phát ngôn', 'Cung cấp thông tin báo chí', 'Cơ quan Đảng Cà Mau', 'Bảo vệ nền tảng tư tưởng'],
+    fileFormat: 'PDF',
+    fileSize: '1.3 MB',
+    signatory: 'Nguyễn Tiến Hải - Bí thư Tỉnh ủy',
+    updatedBy: 'Lê Văn An - Cán bộ Tổng hợp',
+    updatedAt: '2025-08-15T08:15:00Z',
+    isFeatured: false,
+    downloadCount: 380,
+    viewCount: 1390,
+    ocrContent: 'QUY ĐỊNH SỐ 12-QĐ/TU CỦA BAN THƯỜNG VỤ TỈNH ỦY CÀ MAU. Trách nhiệm người phát ngôn: Chủ động, trung thực, bảo đảm kỷ luật phát ngôn và giữ gìn bí mật nhà nước theo đúng quy định hiện hành.',
+    history: [
+      { timestamp: '2025-08-14 16:00', action: 'Ký ban hành quy định', userName: 'Thường vụ Tỉnh ủy' }
+    ]
+  },
+  {
+    id: 'doc-010',
+    title: 'Bộ ảnh tư liệu Đại hội Đảng bộ tỉnh Cà Mau qua các thời kỳ và hoạt động Tuyên giáo',
+    codeNumber: '01-HA/BTG',
+    documentType: 'Hình ảnh',
+    category: 'Lịch sử Đảng',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-02-18',
+    accessLevel: 'public',
+    summary: 'Bộ sưu tập 120 bức ảnh tư liệu quý hiếm ghi lại chân dung các đồng chí lãnh đạo Tỉnh ủy qua các thời kỳ, các kỳ Đại hội Đảng bộ tỉnh từ Đại hội I đến Đại hội XVI và những thành tựu phát triển nổi bật.',
+    keywords: ['Ảnh tư liệu', 'Đại hội Đảng bộ Cà Mau', 'Tư liệu lịch sử', 'Hình ảnh truyền thống'],
+    fileFormat: 'JPG',
+    fileSize: '34.2 MB',
+    signatory: 'Trung tâm Lưu trữ & Thư viện Tỉnh ủy',
+    updatedBy: 'Trần Minh Trí - Cán bộ CNTT',
+    updatedAt: '2026-02-19T10:00:00Z',
+    isFeatured: true,
+    downloadCount: 650,
+    viewCount: 2840,
+    ocrContent: 'BỘ ẢNH TƯ LIỆU ĐẠI HỘI ĐẢNG BỘ TỈNH CÀ MAU. Gồm các tư liệu phục dựng hình ảnh thời kháng chiến chống Pháp, chống Mỹ tại Chiến khu U Minh, Căn cứ Xẻo Đước và các kỳ Đại hội thời kỳ đổi mới.',
+    history: [
+      { timestamp: '2026-02-18 09:00', action: 'Phục dựng và số hóa ảnh tư liệu', userName: 'Tổ Kỹ thuật số hóa' }
+    ]
+  },
+  {
+    id: 'doc-011',
+    title: 'Phóng sự truyền hình: "Đất Mũi kiên cường - Bản lĩnh và Khát vọng của Tuyên giáo Cà Mau"',
+    codeNumber: '02-VD/BTG',
+    documentType: 'Video',
+    category: 'Văn hóa - văn nghệ',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-02-03',
+    accessLevel: 'public',
+    summary: 'Phóng sự tài liệu truyền hình ghi nhận những đóng góp thầm lặng của đội ngũ cán bộ làm công tác tư tưởng, văn hóa trên quê hương Đất Mũi trong sự nghiệp xây dựng Đảng và bảo vệ Tổ quốc.',
+    keywords: ['Phóng sự Tuyên giáo', 'Đất Mũi kiên cường', 'Video tư liệu', 'Truyền hình Cà Mau'],
+    fileFormat: 'MP4',
+    fileSize: '148 MB',
+    signatory: 'Ban Biên tập Phóng sự Ban Tuyên giáo & Đài PTTH Cà Mau',
+    updatedBy: 'Trần Minh Trí - Cán bộ CNTT',
+    updatedAt: '2026-02-04T16:00:00Z',
+    isFeatured: true,
+    downloadCount: 410,
+    viewCount: 3100,
+    ocrContent: 'VIDEO PHÓNG SỰ TUYÊN GIÁO CÀ MAU. Thời lượng: 28 phút 45 giây. Phỏng vấn các đồng chí lão thành cách mạng và cán bộ trẻ về khát vọng phát triển vùng cực Nam của Tổ quốc.',
+    history: [
+      { timestamp: '2026-02-03 20:00', action: 'Phát sóng truyền hình và lưu trữ số', userName: 'Đài PTTH & Ban TG' }
+    ]
+  },
+  {
+    id: 'doc-012',
+    title: 'Hệ thống biểu mẫu báo cáo định kỳ công tác tuyên giáo cho các Huyện ủy, Thành ủy',
+    codeNumber: '05-BM/BTGTU',
+    documentType: 'Biểu mẫu',
+    category: 'Công tác phối hợp',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-01-10',
+    accessLevel: 'internal',
+    summary: 'Tập hợp các mẫu bảng biểu tổng hợp báo cáo tháng, quý, 6 tháng và năm về kết quả công tác tuyên truyền miệng, nắm bắt dư luận, công tác khoa giáo và đào tạo bồi dưỡng lý luận.',
+    keywords: ['Biểu mẫu báo cáo', 'Công tác tuyên giáo', 'Mẫu Excel chuẩn', 'Thành ủy Huyện ủy Cà Mau'],
+    fileFormat: 'XLSX',
+    fileSize: '450 KB',
+    signatory: 'Văn phòng Ban Tuyên giáo Tỉnh ủy',
+    updatedBy: 'Lê Văn An - Cán bộ Tổng hợp',
+    updatedAt: '2026-01-11T14:00:00Z',
+    isFeatured: false,
+    downloadCount: 520,
+    viewCount: 1640,
+    ocrContent: 'HỆ THỐNG BIỂU MẪU CÔNG TÁC TUYÊN GIÁO. Mẫu 01: Báo cáo dư luận xã hội; Mẫu 02: Báo cáo công tác khoa giáo; Mẫu 03: Thống kê lớp bồi dưỡng chính trị; Mẫu 04: Báo cáo hoạt động báo cáo viên.',
+    history: [
+      { timestamp: '2026-01-10 11:00', action: 'Ban hành biểu mẫu chuẩn', userName: 'Văn phòng Ban' }
+    ]
+  },
+  {
+    id: 'doc-013',
+    title: 'Nghị quyết về xây dựng và phát triển văn hóa, con người Cà Mau đáp ứng yêu cầu phát triển bền vững',
+    codeNumber: '08-NQ/TU',
+    documentType: 'Nghị quyết',
+    category: 'Văn hóa - văn nghệ',
+    issuingAuthority: 'Tỉnh ủy Cà Mau',
+    issueDate: '2025-11-20',
+    accessLevel: 'public',
+    summary: 'Nghị quyết chiến lược phát huy các giá trị văn hóa sông nước, tính cách hào sảng nghĩa khí của người Đất Mũi, gắn kết bảo tồn di sản văn hóa phi vật thể (Đờn ca tài tử) với phát triển du lịch sinh thái.',
+    keywords: ['Nghị quyết 08', 'Văn hóa Cà Mau', 'Con người Đất Mũi', 'Đờn ca tài tử'],
+    fileFormat: 'PDF',
+    fileSize: '3.1 MB',
+    signatory: 'Nguyễn Tiến Hải - Bí thư Tỉnh ủy',
+    updatedBy: 'Nguyễn Thị Mai - Phòng Văn hóa',
+    updatedAt: '2025-11-22T08:00:00Z',
+    isFeatured: true,
+    downloadCount: 390,
+    viewCount: 1420,
+    ocrContent: 'NGHỊ QUYẾT SỐ 08-NQ/TU: XÂY DỰNG VÀ PHÁT TRIỂN VĂN HÓA, CON NGƯỜI CÀ MAU. Xây dựng môi trường văn hóa lành mạnh, phát huy truyền thống cách mạng kiên cường, nghĩa tình của nhân dân Cà Mau.',
+    history: [
+      { timestamp: '2025-11-20 15:30', action: 'Ban hành nghị quyết', userName: 'Hội nghị Tỉnh ủy' }
+    ]
+  },
+  {
+    id: 'doc-014',
+    title: 'Quyết định ban hành Quy chế bảo vệ bí mật nhà nước trong hoạt động Tuyên giáo',
+    codeNumber: '42-QĐ/BTGTU',
+    documentType: 'Quyết định',
+    category: 'Khoa giáo',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-02-10',
+    accessLevel: 'restricted',
+    summary: 'Quy chế quản lý văn bản nội bộ, tài liệu hạn chế phổ biến, bảo mật máy tính soạn thảo và quy trình lưu trữ tài liệu trong cơ quan Ban Tuyên giáo Tỉnh ủy.',
+    keywords: ['Bảo vệ an toàn thông tin', 'Tài liệu hạn chế', 'Quy chế cơ quan', 'An toàn thông tin'],
+    fileFormat: 'PDF',
+    fileSize: '2.1 MB',
+    signatory: 'Hồ Trung Việt - Trưởng Ban Tuyên giáo Tỉnh ủy',
+    updatedBy: 'Lê Văn An - Cán bộ Tổng hợp',
+    updatedAt: '2026-02-11T09:10:00Z',
+    isFeatured: false,
+    downloadCount: 42,
+    viewCount: 180,
+    ocrContent: 'QUYẾT ĐỊNH SỐ 42-QĐ/BTGTU: QUY CHẾ BẢO VỆ BÍ MẬT NHÀ NƯỚC. Phân cấp độ mật: Tuyệt mật, Tối mật, Mật. Nghiêm cấm sao chép, truyền phát trên mạng Internet công cộng.',
+    history: [
+      { timestamp: '2026-02-10 10:00', action: 'Ban hành quy chế', userName: 'Ban Tuyên giáo Tỉnh ủy' }
+    ]
+  }
+];
+
+export const DOCUMENT_TYPES = [
+  'Báo cáo',
+  'Biên bản',
+  'Công văn',
+  'Chương trình',
+  'Đề án',
+  'Hướng dẫn',
+  'Kế hoạch',
+  'Kết luận',
+  'Phương án',
+  'Quy chế',
+  'Quy định',
+  'Quy hoạch',
+  'Quyết định',
+  'Tờ trình',
+  'Thông báo',
+  'Đề cương',
+  'Bài phát biểu',
+  'Hình ảnh',
+  'Video',
+  'Biểu mẫu'
+];
+
+export const CATEGORIES = [
+  'Lý luận chính trị',
+  'Thực thành tư tưởng Hồ Chí Minh',
+  'Lịch sử Đảng',
+  'Báo cáo viên, tuyên truyền viên',
+  'Dư luận xã hội',
+  'Chuyển đổi số',
+  'Tuyên truyền - báo chí - xuất bản',
+  'Văn hóa - văn nghệ',
+  'Khoa giáo',
+  'Khoa học và Công nghệ',
+  'Thông tin đối ngoại',
+  'Tuyên truyền biển đảo',
+  'Công tác phối hợp',
+  'Danh mục khác'
+];
+
+export const ISSUING_AUTHORITIES = [
+  'Tỉnh ủy Cà Mau',
+  'Ban Thường vụ Tỉnh ủy',
+  'Ban Tuyên giáo Tỉnh ủy',
+  'Ban Tuyên giáo Trung ương',
+  'UBND Tỉnh Cà Mau'
+];
+
+export const INITIAL_NOTIFICATIONS = [
+  {
+    id: 'notif-1',
+    title: 'Ban hành Kế hoạch công tác Tuyên giáo tỉnh Cà Mau năm 2026',
+    content: 'Ban Tuyên giáo Tỉnh ủy đã ban hành Kế hoạch số 88-KH/BTGTU. Đề nghị các Đảng bộ trực thuộc tải về và triển khai.',
+    date: '2026-01-16',
+    type: 'document' as const,
+    isRead: false,
+    documentId: 'doc-001'
+  },
+  {
+    id: 'notif-2',
+    title: 'Thông báo triệu tập Hội nghị Báo cáo viên Tỉnh ủy tháng 3/2026',
+    content: 'Hội nghị Báo cáo viên định kỳ sẽ diễn ra vào lúc 08h00 ngày 30/03/2026 tại Hội trường Ban Tuyên giáo Tỉnh ủy.',
+    date: '2026-03-20',
+    type: 'training' as const,
+    isRead: false
+  },
+  {
+    id: 'notif-3',
+    title: 'Đẩy mạnh tuyên truyền phòng chống khai thác hải sản bất hợp pháp (IUU)',
+    content: 'Thực hiện ý kiến chỉ đạo của Thường trực Tỉnh ủy về tăng cường tuyên truyền pháp luật biển đến ngư dân các huyện ven biển.',
+    date: '2026-02-22',
+    type: 'urgent' as const,
+    isRead: true,
+    documentId: 'doc-005'
+  },
+  {
+    id: 'notif-4',
+    title: 'Hoàn thành số hóa Bộ ảnh tư liệu lịch sử Đảng bộ Cà Mau',
+    content: 'Hơn 120 ảnh tư liệu quý hiếm thời kỳ 1930 - 2025 đã được phục dựng và đưa vào kho lưu trữ số phục vụ nghiên cứu.',
+    date: '2026-02-19',
+    type: 'info' as const,
+    isRead: true,
+    documentId: 'doc-010'
+  }
+];
+
+export const INITIAL_AUDIT_LOGS = [
+  {
+    id: 'log-1',
+    action: 'Tải lên' as const,
+    documentId: 'doc-001',
+    documentTitle: 'Kế hoạch công tác Tuyên giáo năm 2026',
+    userEmail: 'an.btgtu@camau.dcs.vn',
+    userName: 'Lê Văn An',
+    userRole: 'editor' as const,
+    timestamp: '2026-01-16 08:30:15',
+    details: 'Đã tải lên tệp PDF gốc và hoàn tất quét OCR'
+  },
+  {
+    id: 'log-2',
+    action: 'Xem chi tiết' as const,
+    documentId: 'doc-002',
+    documentTitle: 'Đề án Chuyển đổi số trong hoạt động các cơ quan Đảng',
+    userEmail: 'tuanlinhtgcm@gmail.com',
+    userName: 'Trương Tuấn Linh (Lãnh đạo Ban)',
+    userRole: 'admin' as const,
+    timestamp: '2026-03-27 14:12:08',
+    details: 'Truy cập tài liệu nội bộ từ phòng làm việc'
+  },
+  {
+    id: 'log-3',
+    action: 'Tải xuống' as const,
+    documentId: 'doc-005',
+    documentTitle: 'Hướng dẫn tuyên truyền biển, đảo và bảo vệ chủ quyền biên giới Tây Nam',
+    userEmail: 'mai.btgtu@camau.dcs.vn',
+    userName: 'Nguyễn Thị Mai',
+    userRole: 'staff' as const,
+    timestamp: '2026-03-28 09:05:40',
+    details: 'Tải tài liệu PDF phục vụ tổ chức tập huấn'
+  }
+];
