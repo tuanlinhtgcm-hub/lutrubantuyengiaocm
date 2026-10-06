@@ -373,11 +373,11 @@ export const Header: React.FC<HeaderProps> = ({
             )}
           </div>
 
-          <div className="flex-shrink-0">
-            <h1 className="text-lg md:text-xl font-extrabold tracking-wide uppercase text-white drop-shadow whitespace-nowrap">
+          <div className="flex-shrink-0 flex flex-col items-center text-center">
+            <h1 className="text-lg md:text-xl font-extrabold tracking-wide uppercase text-white drop-shadow whitespace-nowrap text-center">
               BAN TUYÊN GIÁO TỈNH ỦY CÀ MAU
             </h1>
-            <p className="text-xs md:text-sm font-medium text-amber-200 tracking-wide flex items-center gap-1.5 whitespace-nowrap">
+            <p className="w-full text-xs md:text-sm font-medium text-amber-200 tracking-wide flex items-center justify-center gap-1.5 whitespace-nowrap text-center">
               <span className="text-amber-200 font-bold">KHO LƯU TRỮ SỐ</span>
               <span className="text-amber-200/70">–</span>
               <span className="text-amber-200 font-medium">TÀI LIỆU TUYÊN GIÁO</span>
