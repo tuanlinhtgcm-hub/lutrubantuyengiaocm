@@ -88,6 +88,7 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
     { label: 'Chuyển đổi số', count: 190, color: 'bg-blue-600' },
     { label: 'Tuyên truyền biển đảo', count: 210, color: 'bg-cyan-600' },
     { label: 'Dư luận xã hội', count: 175, color: 'bg-emerald-600' },
+    { label: 'Khoa giáo', count: 195, color: 'bg-teal-600' },
     { label: 'Văn hóa - văn nghệ', count: 185, color: 'bg-purple-600' },
   ];
 

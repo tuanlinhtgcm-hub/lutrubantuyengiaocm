@@ -341,6 +341,126 @@ export const INITIAL_DOCUMENTS: DocumentItem[] = [
     history: [
       { timestamp: '2026-02-10 10:00', action: 'Ban hành quy chế', userName: 'Ban Tuyên giáo Tỉnh ủy' }
     ]
+  },
+  {
+    id: 'doc-015',
+    title: 'Kế hoạch triển khai nhiệm vụ trọng tâm công tác Khoa giáo năm 2026 trên địa bàn tỉnh Cà Mau',
+    codeNumber: '28-KH/BTGTU',
+    documentType: 'Kế hoạch',
+    category: 'Khoa giáo',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-01-18',
+    accessLevel: 'public',
+    summary: 'Định hướng phối hợp liên ngành về giáo dục đào tạo, y tế chăm sóc sức khỏe nhân dân, khoa học công nghệ, bảo vệ môi trường sinh thái và ứng phó biến đổi khí hậu tỉnh Cà Mau.',
+    keywords: ['Công tác Khoa giáo', 'Giáo dục đào tạo', 'Khoa học công nghệ', 'Y tế Cà Mau', 'Biến đổi khí hậu'],
+    fileFormat: 'PDF',
+    fileSize: '2.4 MB',
+    signatory: 'Hồ Trung Việt - Trưởng Ban Tuyên giáo Tỉnh ủy',
+    updatedBy: 'Trương Tuấn Linh - Phòng Khoa giáo',
+    updatedAt: '2026-01-19T08:30:00Z',
+    isFeatured: true,
+    downloadCount: 310,
+    viewCount: 1150,
+    ocrContent: 'KẾ HOẠCH SỐ 28-KH/BTGTU: CÔNG TÁC KHOA GIÁO NĂM 2026. Tăng cường đổi mới căn bản, toàn diện giáo dục và đào tạo; nâng cao chất lượng nguồn nhân lực khoa học công nghệ gắn với kinh tế biển Đất Mũi.',
+    history: [
+      { timestamp: '2026-01-18 14:00', action: 'Ban hành kế hoạch khoa giáo', userName: 'Ban Tuyên giáo Tỉnh ủy' }
+    ]
+  },
+  {
+    id: 'doc-016',
+    title: 'Chương trình phối hợp công tác Văn hóa – Văn nghệ và phát huy giá trị di sản Đờn ca tài tử tỉnh Cà Mau',
+    codeNumber: '19-CTr/BTGTU',
+    documentType: 'Chương trình',
+    category: 'Văn hóa - văn nghệ',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-02-25',
+    accessLevel: 'public',
+    summary: 'Chương trình phát triển hoạt động văn hóa nghệ thuật quần chúng, bảo tồn nghệ thuật Đờn ca tài tử Nam Bộ và các giá trị văn hóa truyền thống của cộng đồng các dân tộc tỉnh Cà Mau.',
+    keywords: ['Văn hóa văn nghệ', 'Đờn ca tài tử', 'Di sản văn hóa', 'Nghệ thuật quần chúng', 'Bản sắc Cà Mau'],
+    fileFormat: 'PDF',
+    fileSize: '1.9 MB',
+    signatory: 'Nguyễn Quốc Tiến - Phó Trưởng Ban Tuyên giáo',
+    updatedBy: 'Lê Văn An - Phòng Tuyên truyền',
+    updatedAt: '2026-02-26T10:15:00Z',
+    isFeatured: true,
+    downloadCount: 260,
+    viewCount: 980,
+    ocrContent: 'CHƯƠNG TRÌNH SỐ 19-CTr/BTGTU: PHỐI HỢP CÔNG TÁC VĂN HÓA - VĂN NGHỆ. Xây dựng đời sống văn hóa cơ sở lành mạnh; cổ vũ các văn nghệ sĩ sáng tác tác phẩm chất lượng cao về quê hương Cà Mau đổi mới.',
+    history: [
+      { timestamp: '2026-02-25 09:30', action: 'Ban hành chương trình văn hóa', userName: 'Ban Tuyên giáo Tỉnh ủy' }
+    ]
+  },
+  {
+    id: 'doc-017',
+    title: 'Kế hoạch ứng dụng tiến bộ Khoa học và Công nghệ trong sản xuất nông nghiệp công nghệ cao và kinh tế biển tỉnh Cà Mau',
+    codeNumber: '12-KH/TU',
+    documentType: 'Kế hoạch',
+    category: 'Khoa học và Công nghệ',
+    issuingAuthority: 'Tỉnh ủy Cà Mau',
+    issueDate: '2026-02-12',
+    accessLevel: 'public',
+    summary: 'Đẩy mạnh nghiên cứu, ứng dụng khoa học kỹ thuật số, công nghệ sinh học và năng lượng tái tạo phục vụ chuỗi giá trị tôm - rừng và kinh tế biển Cà Mau.',
+    keywords: ['Khoa học công nghệ', 'Kinh tế biển', 'Công nghệ cao', 'Tôm rừng Cà Mau'],
+    fileFormat: 'PDF',
+    fileSize: '2.8 MB',
+    signatory: 'Nguyễn Tiến Hải - Bí thư Tỉnh ủy',
+    updatedBy: 'Lê Văn An - Phòng Tuyên truyền',
+    updatedAt: '2026-02-13T09:00:00Z',
+    isFeatured: false,
+    downloadCount: 145,
+    viewCount: 620,
+    ocrContent: 'KẾ HOẠCH SỐ 12-KH/TU: KHOA HỌC VÀ CÔNG NGHỆ TỈNH CÀ MAU. Thúc đẩy chuyển đổi số trong nông nghiệp thủy sản, phát triển các mô hình nuôi tôm sinh thái ứng dụng công nghệ cao.',
+    history: [
+      { timestamp: '2026-02-12 11:00', action: 'Ban hành kế hoạch KH&CN', userName: 'Tỉnh ủy Cà Mau' }
+    ]
+  },
+  {
+    id: 'doc-018',
+    title: 'Kế hoạch công tác Thông tin đối ngoại tỉnh Cà Mau năm 2026, quảng bá hình ảnh Đất Mũi ra trường quốc tế',
+    codeNumber: '35-KH/BTGTU',
+    documentType: 'Kế hoạch',
+    category: 'Thông tin đối ngoại',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-03-01',
+    accessLevel: 'public',
+    summary: 'Tăng cường tuyên truyền đối ngoại về tiềm năng du lịch sinh thái Mũi Cà Mau, Vườn quốc gia U Minh Hạ, thu hút đầu tư nước ngoài và kiều bào hướng về quê hương.',
+    keywords: ['Thông tin đối ngoại', 'Đất Mũi Cà Mau', 'Du lịch sinh thái', 'Quảng bá địa phương'],
+    fileFormat: 'PDF',
+    fileSize: '2.0 MB',
+    signatory: 'Hồ Trung Việt - Trưởng Ban Tuyên giáo Tỉnh ủy',
+    updatedBy: 'Trương Tuấn Linh - Cán bộ Quản trị',
+    updatedAt: '2026-03-02T14:20:00Z',
+    isFeatured: true,
+    downloadCount: 210,
+    viewCount: 890,
+    ocrContent: 'KẾ HOẠCH SỐ 35-KH/BTGTU: CÔNG TÁC THÔNG TIN ĐỐI NGOẠI NĂM 2026. Xây dựng tài liệu tuyên truyền đa ngôn ngữ, quảng bá hình ảnh con người Cà Mau thân thiện, nghĩa tình và giàu tiềm năng phát triển.',
+    history: [
+      { timestamp: '2026-03-01 15:30', action: 'Ban hành kế hoạch thông tin đối ngoại', userName: 'Ban Tuyên giáo Tỉnh ủy' }
+    ]
+  },
+  {
+    id: 'doc-019',
+    title: 'Hướng dẫn nghiệp vụ công tác kiểm tra, giám sát chuyên đề công tác Tuyên giáo cơ sở',
+    codeNumber: '06-HD/BTGTU',
+    documentType: 'Hướng dẫn',
+    category: 'Danh mục khác',
+    issuingAuthority: 'Ban Tuyên giáo Tỉnh ủy',
+    issueDate: '2026-01-22',
+    accessLevel: 'internal',
+    summary: 'Quy trình, biểu mẫu và phương pháp tiến hành kiểm tra, giám sát thường xuyên và đột xuất công tác tuyên giáo tại các Đảng bộ xã, phường, thị trấn.',
+    keywords: ['Hướng dẫn nghiệp vụ', 'Kiểm tra giám sát', 'Tuyên giáo cơ sở', 'Biểu mẫu quy trình'],
+    fileFormat: 'PDF',
+    fileSize: '1.6 MB',
+    signatory: 'Nguyễn Quốc Tiến - Phó Trưởng Ban Tuyên giáo',
+    updatedBy: 'Lê Văn An - Phòng Tuyên truyền',
+    updatedAt: '2026-01-23T10:00:00Z',
+    isFeatured: false,
+    downloadCount: 95,
+    viewCount: 430,
+    ocrContent: 'HƯỚNG DẪN SỐ 06-HD/BTGTU: KIỂM TRA GIÁM SÁT CÔNG TÁC TUYÊN GIÁO. Đánh giá thực chất việc quán triệt nghị quyết Đảng, nắm bắt tình hình tư tưởng nhân dân và xử lý các điểm nóng tại cơ sở.',
+    history: [
+      { timestamp: '2026-01-22 08:30', action: 'Ban hành hướng dẫn', userName: 'Ban Tuyên giáo Tỉnh ủy' }
+    ]
   }
 ];
 

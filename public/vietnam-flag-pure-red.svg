@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 360" width="100%" height="100%">
+  <defs>
+    <!-- Official Vietnam Flag Red (#DA251D) -->
+    <linearGradient id="pureRedGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DA251D" />
+      <stop offset="50%" stop-color="#E52B23" />
+      <stop offset="100%" stop-color="#C81B14" />
+    </linearGradient>
+
+    <!-- Silk highlight overlay -->
+    <linearGradient id="lightShimmer" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF" stop-opacity="0.12" />
+      <stop offset="25%" stop-color="#DA251D" stop-opacity="0" />
+      <stop offset="50%" stop-color="#FFDD33" stop-opacity="0.1" />
+      <stop offset="75%" stop-color="#DA251D" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000" stop-opacity="0.25" />
+    </linearGradient>
+
+    <radialGradient id="centerAura" cx="15%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#FFE066" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#DA251D" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Pure Official National Flag Red -->
+  <rect width="1920" height="360" fill="url(#pureRedGrad)" />
+
+  <!-- Subtle silk drape folds -->
+  <path d="M0,0 C450,110 850,-30 1350,90 C1650,160 1800,40 1920,60 L1920,360 L0,360 Z" fill="#B91C1C" opacity="0.4" />
+  <path d="M0,80 C500,220 950,50 1450,180 C1700,240 1850,110 1920,130 L1920,360 L0,360 Z" fill="#991B1B" opacity="0.3" />
+
+  <!-- Shimmer and aura -->
+  <rect width="1920" height="360" fill="url(#lightShimmer)" />
+  <rect width="1920" height="360" fill="url(#centerAura)" />
+</svg>

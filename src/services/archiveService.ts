@@ -37,16 +37,23 @@ export class ArchiveService {
       this.setStoredData(STORAGE_KEYS.DOCS, INITIAL_DOCUMENTS);
       return INITIAL_DOCUMENTS;
     }
+    let needsUpdate = false;
+    let mergedDocs = [...docs];
+    for (const initDoc of INITIAL_DOCUMENTS) {
+      if (!mergedDocs.some((d) => d.id === initDoc.id)) {
+        mergedDocs.push(initDoc);
+        needsUpdate = true;
+      }
+    }
     // Migrate any legacy 'confidential' access level to 'restricted'
-    let hasConfidential = false;
-    const cleanedDocs = docs.map((d) => {
+    const cleanedDocs = mergedDocs.map((d) => {
       if ((d.accessLevel as string) === 'confidential') {
-        hasConfidential = true;
+        needsUpdate = true;
         return { ...d, accessLevel: 'restricted' as const };
       }
       return d;
     });
-    if (hasConfidential) {
+    if (needsUpdate) {
       this.setStoredData(STORAGE_KEYS.DOCS, cleanedDocs);
     }
     return cleanedDocs;

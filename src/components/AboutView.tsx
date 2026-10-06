@@ -71,8 +71,7 @@ export const AboutView: React.FC = () => {
             'Phòng Lý luận chính trị và Lịch sử Đảng',
             'Phòng Tuyên truyền - Báo chí - Xuất bản',
             'Phòng Khoa giáo và Văn hóa - Văn nghệ',
-            'Phòng Dư luận xã hội và Thông tin đối ngoại',
-            'Tổ Chuyên trách Ban Chỉ đạo 35 Tỉnh ủy',
+            'Phòng Thông tin - Tổng hợp',
           ].map((dept, i) => (
             <div key={i} className="flex items-center gap-2.5 p-3 rounded-xl bg-slate-50 border border-slate-100 font-semibold text-slate-800">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />

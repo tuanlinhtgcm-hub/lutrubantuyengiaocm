@@ -7,6 +7,7 @@ import { AdvancedSearchView } from './components/AdvancedSearchView';
 import { AboutView } from './components/AboutView';
 import { UserGuideView } from './components/UserGuideView';
 import { ContactView } from './components/ContactView';
+import { Footer } from './components/Footer';
 import { UploadModal } from './components/UploadModal';
 import { EditDocumentModal } from './components/EditDocumentModal';
 import { UserCollectionsModal } from './components/UserCollectionsModal';
@@ -17,7 +18,7 @@ import { DocumentItem, FilterCriteria, UserProfile, UserRole, NotificationItem, 
 import { ArchiveService } from './services/archiveService';
 import { auth, testFirestoreConnection } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
-import { Bell, CheckCircle2, ShieldCheck, Heart } from 'lucide-react';
+import { Bell, CheckCircle2 } from 'lucide-react';
 
 export default function App() {
   // Test Firestore connection on mount per skill requirement
@@ -114,15 +115,70 @@ export default function App() {
         ...defaultFilters,
         category: 'Lý luận chính trị',
       });
+    } else if (key === 'ho-chi-minh-thought') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Thực thành tư tưởng Hồ Chí Minh',
+      });
     } else if (key === 'party-history') {
       setFilterCriteria({
         ...defaultFilters,
         category: 'Lịch sử Đảng',
       });
+    } else if (key === 'rapporteur') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Báo cáo viên, tuyên truyền viên',
+      });
+    } else if (key === 'social-opinion') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Dư luận xã hội',
+      });
+    } else if (key === 'digital-transformation') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Chuyển đổi số',
+      });
     } else if (key === 'propaganda') {
       setFilterCriteria({
         ...defaultFilters,
         category: 'Tuyên truyền - báo chí - xuất bản',
+      });
+    } else if (key === 'science-education') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Khoa giáo',
+      });
+    } else if (key === 'science-technology') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Khoa học và Công nghệ',
+      });
+    } else if (key === 'foreign-information') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Thông tin đối ngoại',
+      });
+    } else if (key === 'islands-seas') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Tuyên truyền biển đảo',
+      });
+    } else if (key === 'coordination-work') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Công tác phối hợp',
+      });
+    } else if (key === 'other-categories') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Danh mục khác',
+      });
+    } else if (key === 'culture-arts') {
+      setFilterCriteria({
+        ...defaultFilters,
+        category: 'Văn hóa - văn nghệ',
       });
     } else if (key === 'multimedia') {
       setFilterCriteria({
@@ -323,13 +379,26 @@ export default function App() {
           />
         )}
 
-        {(activeTab === 'archive' ||
-          activeTab === 'directives' ||
-          activeTab === 'political-theory' ||
-          activeTab === 'party-history' ||
-          activeTab === 'propaganda' ||
-          activeTab === 'multimedia' ||
-          activeTab === 'reports-forms') && (
+        {([
+          'archive',
+          'directives',
+          'political-theory',
+          'ho-chi-minh-thought',
+          'party-history',
+          'rapporteur',
+          'social-opinion',
+          'digital-transformation',
+          'propaganda',
+          'culture-arts',
+          'science-education',
+          'science-technology',
+          'foreign-information',
+          'islands-seas',
+          'coordination-work',
+          'other-categories',
+          'multimedia',
+          'reports-forms',
+        ] as NavItemKey[]).includes(activeTab) && (
           <DocumentArchive
             documents={documents}
             userRole={currentUser.role}
@@ -357,97 +426,8 @@ export default function App() {
         {activeTab === 'contact' && <ContactView />}
       </main>
 
-      {/* 4. Footer with Official Party Identification & Copyright */}
-      <footer className="bg-slate-900 text-slate-400 text-xs border-t-4 border-red-700 pt-8 pb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
-            {/* Col 1 */}
-            <div className="space-y-2.5">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-red-600"></span>
-                <h4 className="font-extrabold text-white text-sm uppercase tracking-wide">
-                  BAN TUYÊN GIÁO TỈNH ỦY CÀ MAU
-                </h4>
-              </div>
-              <p className="text-[11px] text-slate-300 leading-relaxed">
-                Hệ thống Kho lưu trữ số – Tài liệu Tuyên giáo tỉnh Cà Mau. Nền tảng số hóa, lưu trữ và tra cứu văn bản chính thức của Đảng bộ tỉnh.
-              </p>
-              <div className="flex items-center gap-2 text-[10px] text-amber-400 font-semibold pt-1">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Bảo đảm An toàn thông tin cấp độ 3 theo tiêu chuẩn cơ quan Đảng</span>
-              </div>
-            </div>
-
-            {/* Col 2 */}
-            <div className="space-y-2">
-              <h5 className="font-bold text-white text-xs uppercase tracking-wider">
-                Trụ sở & Liên hệ
-              </h5>
-              <p className="text-[11px] text-slate-300">
-                Địa chỉ: Số 05, Phan Ngọc Hiển, Phường Tân Thành, tỉnh Cà Mau
-              </p>
-              <p className="text-[11px] text-slate-300">Điện thoại: 0913544770</p>
-              <p className="text-[11px] text-slate-300">Thư điện tử: btgdv.vp@camau.gov.vn</p>
-            </div>
-
-            {/* Col 3 */}
-            <div className="space-y-2">
-              <h5 className="font-bold text-white text-xs uppercase tracking-wider">
-                Chuyên mục trọng tâm
-              </h5>
-              <ul className="space-y-1 text-[11px]">
-                <li>
-                  <button
-                    onClick={() => handleSelectTab('advanced-search')}
-                    className="hover:text-amber-400 font-bold text-amber-300 transition"
-                  >
-                    • Tra cứu nâng cao đa tiêu chí & Quét OCR
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleSelectTab('political-theory')}
-                    className="hover:text-amber-400 transition"
-                  >
-                    • Tài liệu Lý luận chính trị & Học tập Bác Hồ
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleSelectTab('party-history')}
-                    className="hover:text-amber-400 transition"
-                  >
-                    • Lịch sử Đảng bộ tỉnh Cà Mau qua các thời kỳ
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleSelectTab('directives')}
-                    className="hover:text-amber-400 transition"
-                  >
-                    • Đề án Chuyển đổi số cơ quan Đảng tỉnh Cà Mau
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => handleSelectTab('guide')}
-                    className="hover:text-amber-400 transition"
-                  >
-                    • Hướng dẫn tra cứu & quét OCR văn bản
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 gap-2">
-            <p>© 2026 Ban Tuyên giáo Tỉnh ủy Cà Mau. Bản quyền thuộc cơ quan Tỉnh ủy.</p>
-            <p className="flex items-center gap-1">
-              Phát triển trên nền tảng Chuyển đổi số Quốc gia
-            </p>
-          </div>
-        </div>
-      </footer>
+      {/* 4. Footer with Balanced Layout & Administrator Color Customizer */}
+      <Footer currentUser={currentUser} onSelectTab={handleSelectTab} />
 
       {/* Upload Modal */}
       <UploadModal

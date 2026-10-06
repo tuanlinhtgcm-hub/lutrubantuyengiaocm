@@ -27,6 +27,9 @@ import { UserProfile, UserRole, NotificationItem } from '../types';
 import { auth, googleProvider } from '../firebase';
 import { signInWithPopup, signOut } from 'firebase/auth';
 
+const DEFAULT_LOGO = '/logo-tuyen-giao.jpg';
+const FALLBACK_ONLINE_LOGO = 'https://i.ibb.co/TDykz9R9/logo-tuyen-giao-bieu-trung.jpg';
+
 interface HeaderProps {
   currentUser: UserProfile;
   onUpdateRole: (role: UserRole) => void;
@@ -53,12 +56,16 @@ export const Header: React.FC<HeaderProps> = ({
   const [showRoleMenu, setShowRoleMenu] = useState(false);
   const [showNotifMenu, setShowNotifMenu] = useState(false);
 
-  // Logo state loaded from localStorage
-  const [customLogo, setCustomLogo] = useState<string | null>(() => {
+  // Logo state loaded from localStorage or default official emblem
+  const [customLogo, setCustomLogo] = useState<string>(() => {
     try {
-      return localStorage.getItem('cm_agency_custom_logo') || null;
+      const saved = localStorage.getItem('cm_agency_custom_logo');
+      if (saved && saved !== 'null' && saved.trim() !== '') {
+        return saved;
+      }
+      return DEFAULT_LOGO;
     } catch {
-      return null;
+      return DEFAULT_LOGO;
     }
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -86,11 +93,32 @@ export const Header: React.FC<HeaderProps> = ({
   // Preset banner options with high aesthetic quality suitable for Party Committee Archive
   const bannerPresets = [
     {
+      id: 'vietnam-flag-silk',
+      name: 'Đỏ cờ Tổ quốc Việt Nam (Sóng lụa đỏ cờ #DA251D)',
+      value: '/vietnam-flag-banner.svg',
+      preview: 'linear-gradient(135deg, #da251d 0%, #e22c24 45%, #9e120d 100%)',
+      description: 'Màu đỏ thắm nguyên bản của lá cờ Việt Nam với hiệu ứng sóng lụa trang nghiêm và ánh kim vàng'
+    },
+    {
+      id: 'vietnam-flag-pure-red',
+      name: 'Nền đỏ cờ Việt Nam (Sắc đỏ cờ cách mạng quang vinh)',
+      value: '/vietnam-flag-pure-red.svg',
+      preview: 'linear-gradient(to right, #da251d, #e52b23, #c81b14)',
+      description: 'Màu đỏ tươi nguyên bản của lá cờ Tổ quốc Việt Nam, tôn vinh biểu trưng Ban Tuyên giáo'
+    },
+    {
+      id: 'vietnam-flag-gradient',
+      name: 'Đỏ cờ Tổ quốc nguyên bản (Gradient chuyển sắc)',
+      value: 'linear-gradient(135deg, #da251d 0%, #c61911 50%, #8c0d07 100%)',
+      preview: 'linear-gradient(135deg, #da251d 0%, #c61911 50%, #8c0d07 100%)',
+      description: 'Màu đỏ cờ tươi thuần khiết không hoa văn, chuẩn nhận diện chính trị'
+    },
+    {
       id: 'default',
       name: 'Mặc định (Đỏ cờ – Rượu vang – Hải quân)',
       value: '',
       preview: 'linear-gradient(to right, #991b1b, #831843, #1e3a8a)',
-      description: 'Gradient trang trọng chuẩn nhận diện chính trị'
+      description: 'Gradient trang trọng phối hợp các gam màu chính trị'
     },
     {
       id: 'trong-dong',
@@ -205,9 +233,13 @@ export const Header: React.FC<HeaderProps> = ({
 
   const handleRemoveLogo = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (window.confirm('Đồng chí có chắc chắn muốn xóa logo hiện tại để trống không?')) {
-      setCustomLogo(null);
-      localStorage.removeItem('cm_agency_custom_logo');
+    if (window.confirm('Đồng chí muốn khôi phục về Biểu trưng Ban Tuyên giáo mặc định không?')) {
+      setCustomLogo(DEFAULT_LOGO);
+      try {
+        localStorage.setItem('cm_agency_custom_logo', DEFAULT_LOGO);
+      } catch (err) {
+        console.error(err);
+      }
     }
   };
 
@@ -252,7 +284,11 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header
       style={{
-        backgroundImage: customBanner ? `url(${customBanner})` : undefined,
+        backgroundImage: customBanner
+          ? (customBanner.startsWith('linear-gradient') || customBanner.startsWith('radial-gradient')
+              ? customBanner
+              : `url(${customBanner})`)
+          : undefined,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -289,29 +325,32 @@ export const Header: React.FC<HeaderProps> = ({
             />
 
             {customLogo ? (
-              <div className="relative group w-13 h-13">
+              <div className="relative group w-13 h-13 flex-shrink-0">
                 <img
                   src={customLogo}
-                  alt="Logo Ban Tuyên giáo Tỉnh ủy Cà Mau"
-                  className="w-13 h-13 object-cover drop-shadow-md rounded-full p-0.5 bg-white/10 border-2 border-amber-300/60 shadow-sm"
+                  alt="Biểu trưng Ban Tuyên giáo Tỉnh ủy Cà Mau"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = FALLBACK_ONLINE_LOGO;
+                  }}
+                  className="w-13 h-13 object-cover drop-shadow-md rounded-full p-0.5 bg-white border-2 border-amber-300 shadow-md ring-1 ring-amber-400/40"
                 />
                 {currentUser.role === 'admin' && (
                   <div className="absolute inset-0 bg-black/60 rounded-full opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-1.5 backdrop-blur-xs">
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="p-1 rounded-full bg-amber-500 hover:bg-amber-600 text-slate-950 transition"
-                      title="Đổi logo khác"
+                      className="p-1 rounded-full bg-amber-500 hover:bg-amber-600 text-slate-950 transition shadow"
+                      title="Tải logo khác lên"
                     >
                       <Camera className="w-3.5 h-3.5" />
                     </button>
                     <button
                       type="button"
                       onClick={handleRemoveLogo}
-                      className="p-1 rounded-full bg-red-600 hover:bg-red-700 text-white transition"
-                      title="Xóa logo, để trống"
+                      className="p-1 rounded-full bg-red-600 hover:bg-red-700 text-white transition shadow"
+                      title="Khôi phục logo mặc định"
                     >
-                      <Trash2 className="w-3.5 h-3.5" />
+                      <RotateCcw className="w-3.5 h-3.5" />
                     </button>
                   </div>
                 )}
@@ -626,7 +665,11 @@ export const Header: React.FC<HeaderProps> = ({
                 </label>
                 <div
                   style={{
-                    backgroundImage: customBanner ? `url(${customBanner})` : undefined,
+                    backgroundImage: customBanner
+                      ? (customBanner.startsWith('linear-gradient') || customBanner.startsWith('radial-gradient')
+                          ? customBanner
+                          : `url(${customBanner})`)
+                      : undefined,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                   }}
@@ -741,7 +784,9 @@ export const Header: React.FC<HeaderProps> = ({
                           {/* Mini Thumbnail */}
                           <div
                             style={{
-                              backgroundImage: preset.value ? `url(${preset.preview})` : preset.preview,
+                              backgroundImage: preset.preview.startsWith('linear-gradient') || preset.preview.startsWith('radial-gradient')
+                                ? preset.preview
+                                : `url(${preset.preview})`,
                               backgroundSize: 'cover',
                               backgroundPosition: 'center',
                             }}
