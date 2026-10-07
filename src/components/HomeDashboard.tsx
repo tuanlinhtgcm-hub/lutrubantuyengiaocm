@@ -23,6 +23,7 @@ import {
   SlidersHorizontal
 } from 'lucide-react';
 import { DocumentItem, NotificationItem, UserRole } from '../types';
+import { formatDate } from '../utils/dateUtils';
 
 interface HomeDashboardProps {
   documents: DocumentItem[];
@@ -376,7 +377,7 @@ export const HomeDashboard: React.FC<HomeDashboardProps> = ({
                       <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-slate-100 text-slate-700 border border-slate-200">
                         {doc.codeNumber}
                       </span>
-                      <span className="text-[10px] text-slate-400">{doc.issueDate}</span>
+                      <span className="text-[10px] text-slate-500 font-medium">{formatDate(doc.issueDate)}</span>
                     </div>
                     <h4 className="text-xs font-semibold text-slate-800 group-hover:text-blue-700 transition mt-1 line-clamp-2">
                       {doc.title}

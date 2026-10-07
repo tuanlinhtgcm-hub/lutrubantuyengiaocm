@@ -38,6 +38,7 @@ import {
 import { DocumentItem, FilterCriteria, UserRole, AccessLevel, DocumentFormat } from '../types';
 import { DOCUMENT_TYPES, CATEGORIES, ISSUING_AUTHORITIES } from '../data/initialDocuments';
 import { ArchiveService } from '../services/archiveService';
+import { formatDate } from '../utils/dateUtils';
 
 interface DocumentArchiveProps {
   documents: DocumentItem[];
@@ -664,8 +665,8 @@ export const DocumentArchive: React.FC<DocumentArchiveProps> = ({
                         </td>
 
                         {/* Ngày ban hành */}
-                        <td className="px-3 py-3 whitespace-nowrap text-slate-600">
-                          {doc.issueDate}
+                        <td className="px-3 py-3 whitespace-nowrap text-slate-700 font-medium">
+                          {formatDate(doc.issueDate)}
                         </td>
 
                         {/* Lĩnh vực */}
@@ -810,7 +811,7 @@ export const DocumentArchive: React.FC<DocumentArchiveProps> = ({
                     <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
                       <div className="flex items-center justify-between text-[10px] text-slate-500">
                         <span>{doc.issuingAuthority}</span>
-                        <span>{doc.issueDate}</span>
+                        <span className="font-medium text-slate-600">{formatDate(doc.issueDate)}</span>
                       </div>
 
                       <div
@@ -952,7 +953,7 @@ export const DocumentArchive: React.FC<DocumentArchiveProps> = ({
                   <div className="flex justify-between">
                     <span className="text-slate-500">Ngày ban hành:</span>
                     <span className="font-semibold text-slate-800">
-                      {selectedDocument.issueDate}
+                      {formatDate(selectedDocument.issueDate)}
                     </span>
                   </div>
                   <div className="flex justify-between">
@@ -1180,7 +1181,7 @@ export const DocumentArchive: React.FC<DocumentArchiveProps> = ({
                       </h5>
                       <div className="flex justify-between text-[10px] text-slate-400 mt-1">
                         <span>{relDoc.category}</span>
-                        <span>{relDoc.issueDate}</span>
+                        <span>{formatDate(relDoc.issueDate)}</span>
                       </div>
                     </div>
                   ))}

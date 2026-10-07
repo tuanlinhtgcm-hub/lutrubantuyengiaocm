@@ -16,6 +16,7 @@ import { DeleteConfirmModal } from './components/DeleteConfirmModal';
 import { AdminManagementModal } from './components/AdminManagementModal';
 import { DocumentItem, FilterCriteria, UserProfile, UserRole, NotificationItem, AuditLog } from './types';
 import { ArchiveService } from './services/archiveService';
+import { formatDate } from './utils/dateUtils';
 import { auth, testFirestoreConnection } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { Bell, CheckCircle2 } from 'lucide-react';
@@ -257,7 +258,7 @@ export default function App() {
       `Số ký hiệu: ${doc.codeNumber}\n` +
       `Tiêu đề: ${doc.title}\n` +
       `Cơ quan ban hành: ${doc.issuingAuthority}\n` +
-      `Ngày ban hành: ${doc.issueDate}\n` +
+      `Ngày ban hành: ${formatDate(doc.issueDate)}\n` +
       `Mức độ bảo mật: ${doc.accessLevel}\n` +
       `Người ký: ${doc.signatory || 'Lãnh đạo Ban'}\n\n` +
       `NỘI DUNG TÓM TẮT:\n${doc.summary}\n\n` +

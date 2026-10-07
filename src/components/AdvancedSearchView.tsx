@@ -28,6 +28,7 @@ import {
 } from 'lucide-react';
 import { DocumentItem, DocumentFormat, AccessLevel, UserRole } from '../types';
 import { DOCUMENT_TYPES, CATEGORIES, ISSUING_AUTHORITIES } from '../data/initialDocuments';
+import { formatDate } from '../utils/dateUtils';
 import { ArchiveService } from '../services/archiveService';
 
 interface AdvancedSearchViewProps {
@@ -352,7 +353,7 @@ export const AdvancedSearchView: React.FC<AdvancedSearchViewProps> = ({
   const handleExportCSV = () => {
     const headers = ['STT,Số ký hiệu,Tên tài liệu,Loại,Lĩnh vực,Cơ quan,Ngày ban hành,Mức độ,Định dạng'];
     const rows = searchResults.list.map((d, i) =>
-      `"${i + 1}","${d.codeNumber}","${d.title.replace(/"/g, '""')}","${d.documentType}","${d.category}","${d.issuingAuthority}","${d.issueDate}","${d.accessLevel}","${d.fileFormat}"`
+      `"${i + 1}","${d.codeNumber}","${d.title.replace(/"/g, '""')}","${d.documentType}","${d.category}","${d.issuingAuthority}","${formatDate(d.issueDate)}","${d.accessLevel}","${d.fileFormat}"`
     );
     const csvContent = '\uFEFF' + [headers, ...rows].join('\n');
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
@@ -992,7 +993,7 @@ export const AdvancedSearchView: React.FC<AdvancedSearchViewProps> = ({
                   </div>
 
                   <div className="flex items-center gap-2 text-xs">
-                    <span className="text-slate-400 text-[11px]">Ngày: {doc.issueDate}</span>
+                    <span className="text-slate-500 text-[11px] font-medium">Ngày: {formatDate(doc.issueDate)}</span>
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
                         doc.accessLevel === 'public'

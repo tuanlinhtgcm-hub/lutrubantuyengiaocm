@@ -311,7 +311,9 @@ export const UploadModal: React.FC<UploadModalProps> = ({
             </div>
 
             <div>
-              <label className="block font-semibold text-slate-700 mb-1">Ngày ban hành</label>
+              <label className="block font-semibold text-slate-700 mb-1">
+                Ngày ban hành (ngày/tháng/năm)
+              </label>
               <input
                 type="date"
                 required
